@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <div class="login-box">
+            <div class="greeting">
+                <h1>Greetings Passengers</h1>
+            </div>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="text" id="username" name="username" required placeholder="Username" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" name="password" required placeholder="Password" autocomplete="current-password">
+                </div>
+                <button type="submit">Login</button>
+                <div id="login-loader" class="loader hidden">
+                    <div class="spinner"></div>
+                    <p>Logging in...</p>
+                </div>
+                <p id="error-message" class="error"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="profile-container" class="container hidden">
+        <nav class="profile-nav">
+            <button id="logout-btn">Logout</button>
+        </nav>
+        <div class="welcome-header">
+            <h2 id="welcome-message">Welcome</h2>
+        </div>
+        <div class="profile-grid">
+            <div class="profile-card user-info">
+                <div class="profile-header">
+                    <h2>Profile Information</h2>
+                </div>
+                <div class="profile-content" id="user-info">
+                    <div class="skeleton-loader"></div>
+                </div>
+            </div>
+            <div class="profile-card xp-card">
+                <div class="profile-header">
+                    <h2>XP Progress</h2>
+                </div>
+                <div class="profile-content">
+                    <p id="xp-display">XP: Loading...</p>
+                    <div id="xp-chart" class="chart"></div>
+                </div>
+            </div>
+            <div class="profile-card progress-card">
+                <div class="profile-header">
+                    <h2>Progress Chart (Technologies)</h2>
+                </div>
+                <div class="profile-content">
+                    <div id="progress-chart" class="chart"><canvas id="skillPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="profile-loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Loading profile data...</p>
+        </div>
+        <div id="error-container" class="error-container hidden">
+            <p class="error-message"></p>
+            <button class="retry-button">Retry</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
+
+
+
